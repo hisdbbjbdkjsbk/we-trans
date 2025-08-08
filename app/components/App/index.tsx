@@ -14,7 +14,7 @@ const App = ({ children }: IAppProps) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 1050);
+    }, 1550);
 
     return () => clearTimeout(timeout);
   }, [pathname]);

@@ -5,13 +5,13 @@ import "./globals.css";
 import App from "./components/App";
 import localFont from "next/font/local";
 
-export const eUkraineBold = localFont({
-  src: "./fonts/e-Ukraine-Bold.otf", // ✅ relative to layout.tsx
+const eUkraineBold = localFont({
+  src: "./fonts/e-Ukraine-Bold.otf", 
   variable: "--font-eukraine-bold",
   display: "swap",
 });
 
-export const eUkraineLogo = localFont({
+const eUkraineLogo = localFont({
   src: "./fonts/e-UkraineHead-LOGO.otf",
   variable: "--font-eukraine-logo",
   display: "swap",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/logo-3.svg",
+    icon: "/frame.svg",
   },
 };
 
