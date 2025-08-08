@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import PhoneCall from "../../../assets/phone-call.svg";
 import bgGif from "../../../assets/hero-bg.gif";
+import PhoneCall from "../../../assets/phone-call.svg";
 
 interface IHeroProps {
   toggleModalOpen: () => void;
@@ -37,14 +37,15 @@ const Hero = ({ toggleModalOpen }: IHeroProps) => {
         Забронюйте поїздку
       </motion.button>
       <motion.a
-        className='flex items-center justify-center rounded-full p-5 sm:p-7 bg-black cursor-pointer'
-        initial={{ scale: 0, rotate: 180 }}
-        whileInView={{ scale: 1, rotate: 0 }}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.6, type: "spring", stiffness: 120 }}
         href='tel:+380970551341'
+        className='flex gap-1 text-sm md:gap-2 py-2 px-4 md:py-3 md:px-6 md:text-xl items-center justify-center bg-[#000000] rounded-[45px] cursor-pointer font-inter  text-white font-black'
       >
-        <PhoneCall />
+        +380 (97) 055 13 41
+        <PhoneCall className='scale-50 md:scale-75' />
       </motion.a>
     </motion.section>
   );
