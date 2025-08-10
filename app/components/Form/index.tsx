@@ -28,6 +28,7 @@ const inputVariants: Variants = {
 const Form = ({ toggleModalOpen }: IFormProps) => {
   const [phone, setPhone] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (newPhone: string) => {
     setPhone(newPhone);
@@ -42,6 +43,7 @@ const Form = ({ toggleModalOpen }: IFormProps) => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
+      setLoading(true);
       const body = { ...data, phone };
 
       const response = await fetch("/api/send-email", {
@@ -49,19 +51,21 @@ const Form = ({ toggleModalOpen }: IFormProps) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+
       const json = await response.json();
 
       if (response.ok) {
         setIsSuccess(true);
         reset();
         setPhone("");
-
         setTimeout(() => setIsSuccess(false), 3000);
       } else {
         alert("Error: " + json.message);
       }
     } catch (e) {
       alert("Unexpected error occurred");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -171,9 +175,14 @@ const Form = ({ toggleModalOpen }: IFormProps) => {
         </button>
         <button
           type='submit'
-          className='rounded-full font-eukraine-logo font-bold px-6 py-3 bg-black text-white hover:bg-gray-900 transition cursor-pointer'
+          disabled={loading}
+          className={`rounded-full font-eukraine-logo font-bold px-6 py-3 text-white transition cursor-pointer ${
+            loading
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-black hover:bg-gray-900"
+          }`}
         >
-          Відправити
+          {loading ? "Відправка..." : "Відправити"}
         </button>
       </motion.div>
     </form>

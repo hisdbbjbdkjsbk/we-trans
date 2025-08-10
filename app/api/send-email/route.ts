@@ -33,8 +33,6 @@ export async function POST(request: Request) {
       `,
     });
 
-    console.log(res);
-
     const text = `
 📦 Нова заявка з форми:
 - Ім’я: ${name}

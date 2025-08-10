@@ -42,7 +42,7 @@ const Hero = ({ toggleModalOpen }: IHeroProps) => {
         transition={{ delay: 0.4, duration: 0.5 }}
         viewport={{ once: true }}
         href='tel:+380970551341'
-        className='flex gap-1 text-sm md:gap-2 py-2 px-4 md:py-3 md:px-6 md:text-xl items-center justify-center bg-[#000000] rounded-[45px] cursor-pointer font-inter  text-white font-black'
+        className='flex gap-1 text-sm md:gap-2 py-2 px-4 md:py-3 md:px-6 md:text-xl items-center justify-center bg-[#0226fa] rounded-[45px] cursor-pointer font-inter  text-white font-black'
       >
         +380 (97) 055 13 41
         <PhoneCall className='scale-50 md:scale-75' />
