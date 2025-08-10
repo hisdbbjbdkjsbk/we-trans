@@ -5,13 +5,13 @@ import "./globals.css";
 import App from "./components/App";
 import localFont from "next/font/local";
 
-const eUkraineBold = localFont({
+ const eUkraineBold = localFont({
   src: "./fonts/e-Ukraine-Bold.otf", 
   variable: "--font-eukraine-bold",
   display: "swap",
 });
 
-const eUkraineLogo = localFont({
+ const eUkraineLogo = localFont({
   src: "./fonts/e-UkraineHead-LOGO.otf",
   variable: "--font-eukraine-logo",
   display: "swap",
@@ -44,32 +44,43 @@ const inter = Inter({
   display: "swap",
 });
 
+ const keywords: string[] = [
+  "WeTrans",
+  "вантажні перевезення",
+  "пасажирські перевезення",
+  "перевезення по Україні",
+  "міжнародні перевезення",
+  "замовити транспорт",
+  "доставка вантажів",
+  "автоперевезення",
+  "транспортна компанія",
+  "кур'єрська доставка",
+  "оренда транспорту",
+  "перевезення меблів",
+  "переїзд",
+  "доставка товарів",
+  "перевезення вантажів",
+  "замовити вантажівку",
+  "надійні перевезення",
+  "послуги транспортування",
+  "логістичний сервіс",
+  "Lviv Bern",
+  "Львів Берн",
+  "Lviv Zurich",
+  "Львів Цюрих",
+  "Kyiv Geneva",
+  "Київ Женева",
+  "Ukraine Europe",
+  "Kyiv Bern"
+];
+
+
 export const metadata: Metadata = {
   applicationName: "WeTrans",
   title: "WeTrans — Сервіс надійних перевезень",
   description:
     "WeTrans — це сучасна платформа для організації вантажних та пасажирських перевезень. Замовляйте транспортування швидко, зручно та безпечно по всій Україні та за її межами.",
-  keywords: [
-    "WeTrans",
-    "Львів-Берн",
-    "пасажирські перевезення",
-    "перевезення по Україні",
-    "міжнародні перевезення",
-    "замовити транспорт",
-    "доставка вантажів",
-    "автоперевезення",
-    "транспортна компанія",
-    "кур'єрська доставка",
-    "оренда транспорту",
-    "перевезення меблів",
-    "переїзд",
-    "доставка товарів",
-    "перевезення вантажів",
-    "замовити вантажівку",
-    "надійні перевезення",
-    "послуги транспортування",
-    "логістичний сервіс",
-  ],
+  keywords,
   openGraph: {
     title: "WeTrans — Сервіс надійних перевезень",
     description:
