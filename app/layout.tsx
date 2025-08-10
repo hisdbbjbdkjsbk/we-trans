@@ -4,6 +4,7 @@ import { Itim } from "next/font/google";
 import "./globals.css";
 import App from "./components/App";
 import localFont from "next/font/local";
+import { Analytics } from '@vercel/analytics/next';
 
  const eUkraineBold = localFont({
   src: "./fonts/e-Ukraine-Bold.otf", 
@@ -122,7 +123,10 @@ export default function RootLayout({
       <body
         className={`${kalnia.variable} ${kenia.variable} ${itim.variable} ${inter.variable} ${eUkraineBold.variable} ${eUkraineLogo.variable} antialiased`}
       >
-        <App>{children}</App>
+        <App>{children}
+                  <Analytics />
+
+        </App>
       </body>
     </html>
   );
